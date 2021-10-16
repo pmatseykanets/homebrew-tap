@@ -1,11 +1,12 @@
-# Pmatseykanets Tap
+# homebrew-tap
 
-## How do I install these formulae?
+Homebrew formulae of pmatseykanets tools.
 
-`brew install pmatseykanets/tap/<formula>`
+## Installation
 
-Or `brew tap pmatseykanets/tap` and then `brew install <formula>`.
+```sh
+brew tap pmatseykanets/tap
+brew install <formula>
+```
 
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+## Formulae
