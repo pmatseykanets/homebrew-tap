@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Homebrew formulae of pmatseykanets tools.
+Homebrew formulae for different tools.
 
 ## Installation
 
@@ -10,3 +10,5 @@ brew install <formula>
 ```
 
 ## Formulae
+
+- gh-tools - GitHub productivity tools
