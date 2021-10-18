@@ -24,8 +24,22 @@ class GhTools < Formula
       sha256 "fb8748360476ed7e4dce9ace60ba275e19dbe0c87ebc8c5f7c86a020c19a951f"
     end
   end
+  
+  head do
+    url "https://github.com/pmatseykanets/gh-tools.git"
+    depends_on "go" => :build
+  end
 
   def install
+    if build.head?
+      ENV["CGO_ENABLED"] = "0"
+      system "go", "build", "-trimpath", "-ldflags", "-s -w -X github.com/pmatseykanets/gh-tools/version.Version=#{version}", "./cmd/gh-find" 
+      system "go", "build", "-trimpath", "-ldflags", "-s -w -X github.com/pmatseykanets/gh-tools/version.Version=#{version}", "./cmd/gh-pr" 
+      system "go", "build", "-trimpath", "-ldflags", "-s -w -X github.com/pmatseykanets/gh-tools/version.Version=#{version}", "./cmd/gh-watch" 
+      system "go", "build", "-trimpath", "-ldflags", "-s -w -X github.com/pmatseykanets/gh-tools/version.Version=#{version}", "./cmd/gh-go-rdeps" 
+      system "go", "build", "-trimpath", "-ldflags", "-s -w -X github.com/pmatseykanets/gh-tools/version.Version=#{version}", "./cmd/gh-purge-artifacts"   
+    end
+
     bin.install "gh-find"
     bin.install "gh-pr"
     bin.install "gh-watch"
