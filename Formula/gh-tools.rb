@@ -3,7 +3,6 @@ class GhTools < Formula
   homepage "https://github.com/pmatseykanets/gh-tools"
   version "0.9.5"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
